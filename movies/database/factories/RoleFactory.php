@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Film;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Film>
+ * @extends Factory<Role>
  */
-class FilmFactory extends Factory
+class RoleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,11 +18,9 @@ class FilmFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(3),
-            'year' => $this->faker->year(),
-            'minutes' => $this->faker->numberBetween(60, 180),
-            'director_id' => 1,
-            
+            'film_id' => $this->faker->numberBetween(1, 10),
+            'user_id' => 1,
+            'name' => $this->faker->word(), 
         ];
     }
 }
